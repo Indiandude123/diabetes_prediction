@@ -7,7 +7,7 @@ data_source:
   s3_source: data_given/diabetes.csv
 
 load_data:
-  raw_dataset.csv: data/raw/diabetes.csv
+  raw_dataset_csv: data/raw/diabetes.csv
 
 split_data:
   train_path: data/processed/train_diabetes.csv
