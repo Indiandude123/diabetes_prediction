@@ -5,3 +5,5 @@ imbalanced-learn==0.7.0
 pandas
 numpy
 joblib
+pytest
+tox
