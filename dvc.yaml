@@ -7,3 +7,11 @@ stages:
     - data_given/diabetes.csv
     outs:
     - data/raw/diabetes.csv
+  
+  sampled_data:
+    cmd: python src/data_sampler.py --config=params.yaml
+    deps:
+    - src/load_data.py
+    - data/raw/diabetes.csv
+    outs:
+    - data/processed/oversampled_diabetes.csv

@@ -9,6 +9,9 @@ data_source:
 load_data:
   raw_dataset_csv: data/raw/diabetes.csv
 
+sampled_data:
+  oversampled_dataset_csv: data/processed/oversampled_diabetes.csv
+
 split_data:
   train_path: data/processed/train_diabetes.csv
   test_path: data/processed/test_diabetes.csv
