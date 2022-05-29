@@ -22,5 +22,10 @@ estimators:
     learning_rate: 0.13333333333333333
     max_depth: 5 
     n_estimators: 39
+    min_child_weight: 1
 
 model_dir: saved_models
+
+reports:
+  params: report/params.json
+  scores: report/scores.json

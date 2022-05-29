@@ -45,3 +45,31 @@ stages:
     - path: data/processed/train_diabetes.csv
       md5: 8992b802db50bebe53355200cdf89e82
       size: 32111
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/test_diabetes.csv
+      md5: bbc5af8aad902a4c5b332dc039c61cdc
+      size: 7987
+    - path: data/processed/train_diabetes.csv
+      md5: 8992b802db50bebe53355200cdf89e82
+      size: 32111
+    - path: src/train_and_evaluate.py
+      md5: dcbfb4c8b99e398dbf0dfe10076d2bdc
+      size: 2592
+    params:
+      params.yaml:
+        estimators.XGBClassifier.learning_rate: 0.13333333333333333
+        estimators.XGBClassifier.max_depth: 5
+        estimators.XGBClassifier.min_child_weight: 1
+        estimators.XGBClassifier.n_estimators: 39
+    outs:
+    - path: report/params.json
+      md5: 27c8637a474c26d6ffbba0e981d9888c
+      size: 120
+    - path: report/scores.json
+      md5: 3a3d22cd4744b71f5cbd352122a5e729
+      size: 25
+    - path: saved_models/model.joblib
+      md5: 62d326008adbd0d78fe7628d744db470
+      size: 62071
