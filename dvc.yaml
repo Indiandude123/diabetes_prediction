@@ -15,3 +15,12 @@ stages:
     - data/raw/diabetes.csv
     outs:
     - data/processed/oversampled_diabetes.csv
+
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+    - src/data_sampler.py
+    - data/processed/oversampled_diabetes.csv
+    outs:
+    - data/processed/train_diabetes.csv
+    - data/processed/test_diabetes.csv

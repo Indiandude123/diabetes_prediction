@@ -2,7 +2,7 @@ import os
 from get_data import read_params
 import argparse
 import pandas as pd
-from imblearn.over_sampling import RandomOverSampler, SMOTE
+from imblearn.over_sampling import RandomOverSampler
 
 def over_sample_data(config_path):
     config = read_params(config_path)
@@ -20,7 +20,7 @@ def over_sample_data(config_path):
     X = df.iloc[:,:-1]
     y = df.iloc[:,-1]
     
-    over_sampler = SMOTE(random_state=random_state)
+    over_sampler = RandomOverSampler(random_state=random_state)
     X_resampled, y_resampled = over_sampler.fit_resample(X,y)
     
     df_resampled = X_resampled
